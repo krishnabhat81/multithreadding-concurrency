@@ -1,0 +1,45 @@
+/**
+ * Created by krishna1bhat on 5/6/17.
+ */
+---------------------------------------------------------------------------------
+Java concurrency (multi-threading)
+---------------------------------------------------------------------------------
+
+How to do concurrent programming with Java?
+
+What is Concurrency?
+-> Concurrency is the ability to run multiple programs or part of program at a time
+i.e. asynchronously or, parallel -- improves throughput and throughput of app.
+
+(Computer has several CPUs / several cores in one CPU)
+
+Our goal is to use those cores as much as possible.
+
+---------------------------------------------------------------------------------
+Process Vs. Thread
+---------------------------------------------------------------------------------
+A process is independent to other processes.
+Process can not directly access shared data with other processes.
+Resources for process (memory, cpu time) are allocated by OS.
+
+A thread is a lightweight process. It has own stack
+but can access shared data (so visibility and access problems) of other threads in same process.
+Each thread has own memory cache.
+
+By default any java application run in one process. Within this program we can run
+several threads to achieve asynchronous or parallel programming.
+
+---------------------------------------------------------------------------------
+Issues with Concurrency: ---- creates incorrect data and deadlocks
+---------------------------------------------------------------------------------
+Visibility Problem: If thread A reads shared data and thread B changed that data,
+but A is unaware of the change.
+
+Access Problem: If many threads access and change the same data at the same time.
+
+---------------------------------------------------------------------------------
+Locks And Thread Synchronization:
+---------------------------------------------------------------------------------
+Java provides locks protecting part of code to be executed by several threads at the same time.
+We can use synchronized keyword either in method or in class to lock them.
+
