@@ -1,0 +1,16 @@
+----------------------------------------------------------------------------
+Futures and Callables
+----------------------------------------------------------------------------
+
+The Executor Framework presented in the com.concurrency.threadpool package
+works with Runnable object, which can not return a result to caller....
+
+If we need a thread to return a computed result we can use java.util.concurrent.Callable
+(Callable object allows to return values after completion)
+
+The Future (java.util.concurrent.Future) object is used to check the status of
+Callable and retrieve the result from the Callable.
+When we submit Callable object to Executor, the Framework will return an object
+of type Future.
+
+(Callable object uses generics to define the type of object which is returned)
